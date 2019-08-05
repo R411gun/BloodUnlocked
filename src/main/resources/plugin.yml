@@ -1,0 +1,4 @@
+name: Blood
+main: me.xelades.dev.blood.Blood
+version: 1.0
+api-version: 1.14
