@@ -24,17 +24,20 @@ public class Blood extends JavaPlugin implements Listener {
         bloodLocation.setY(bloodLocation.getY() + (event.getEntity().getHeight() / 1.5));
 
         Double particleCount;
+        Double particleMultiplier = 5;
+        Double particleMax = 50;
+        Double particleRange = 0.4;
 
-        if ((event.getFinalDamage() * 5) > 50) {
-            particleCount = 40.0;
+        if (event.getFinalDamage() * particleMultiplier > particleMax) {
+            particleCount = particleMax;
         }
-        else if ((event.getFinalDamage()) * 5 < 0) {
+        else if (event.getFinalDamage() * particleMultiplier < 0) {
             particleCount = 0.0;
         }
         else {
-            particleCount = event.getFinalDamage() * 8;
+            particleCount = event.getFinalDamage() * particleMultiplier;
         }
 
-        event.getEntity().getWorld().spawnParticle(Particle.BLOCK_CRACK, bloodLocation, particleCount.intValue(), 0.4, 0.4, 0.4, Material.REDSTONE_BLOCK.createBlockData());
+        event.getEntity().getWorld().spawnParticle(Particle.BLOCK_CRACK, bloodLocation, particleCount.intValue(), particleRange, particleRange, particleRange, Material.REDSTONE_BLOCK.createBlockData());
     }
 }
