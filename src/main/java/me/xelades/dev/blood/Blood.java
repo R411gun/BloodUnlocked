@@ -25,8 +25,8 @@ public class Blood extends JavaPlugin implements Listener {
 
         Double particleCount;
         Double particleMultiplier = 5.0;
-        Double particleMax = 50.0;
-        Double particleRange = 0.4;
+        Double particleMax = 500.0;
+        Double particleRange = 0.6;
 
         if (event.getFinalDamage() * particleMultiplier > particleMax) {
             particleCount = particleMax;
