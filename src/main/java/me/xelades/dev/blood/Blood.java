@@ -24,9 +24,9 @@ public class Blood extends JavaPlugin implements Listener {
         bloodLocation.setY(bloodLocation.getY() + (event.getEntity().getHeight() / 1.5));
 
         Double particleCount;
-        Double particleMultiplier = 5.0;
+        Double particleMultiplier = 15.0;
         Double particleMax = 500.0;
-        Double particleRange = 0.6;
+        Double particleRange = 0.2;
 
         if (event.getFinalDamage() * particleMultiplier > particleMax) {
             particleCount = particleMax;
